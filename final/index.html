@@ -1,0 +1,70 @@
+<html>
+        <head>
+            <meta charset="utf-8">
+            <title>Passisto</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="css/bootstrap.min.css" />
+            <script type="text/javascript" src="js/jquery.min.js"></script>
+            <script type="text/javascript" src="js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="css/style.css" />
+            <script type="text/javascript" src="obj/coordinates.js"></script>
+            <script type="text/javascript" src="obj/messmenu.js"></script>
+            <script type="text/javascript" src="obj/timetable.js"></script>
+        </head>
+        <body>
+            <div style="background: rgba(16, 17, 36, 1); height: 80px; width: 100vw; position: fixed; top: 0px; padding: 20px; z-index: 1; background-color: black; color: gray; font-size: 25px; text-align: center;">
+                Personal Thomsonian Assistant
+            </div>
+            <div style="background: rgba(16, 17, 36, 1); height:100vh; width:100vw;position: relative;top:80px;">
+                <div class="lazy-containers row nppaddedsda" style="height:60vh; width:100%">
+                    <div class="col-md-6" style="height:100%">
+                        <div class="col-md-12  nppaddedsda" style="display: flex;height: 50%;flex-direction: column;text-align: center;justify-content: center;">
+                            <div class="col-md-12 paddedsda">
+                                You have:
+                            </div>
+                            <div id="nexthave" class="col-md-12 paddedsda">
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="display: flex;height: 50%;flex-direction: column;text-align: center;justify-content: center;">
+                            <div class="col-md-12 paddedsda">
+                                You are supposed to be at:
+                            </div>
+                            <div id="nextclass" class="col-md-12 paddedsda">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="display: flex;height: 100%;text-align: center;flex-direction: column;justify-content: center;">
+                            <div class="col-md-12 paddedsda">
+                                    Whats in the Mess?
+                            </div>
+                            <div id="nextmess" class="col-md-12 paddedsda">
+                                Wait for the clock to hit the hour...
+                            </div>
+                    </div>
+                </div>
+                <div style="height:40vh; width:100%">
+                    <div class="lazy-containers" style="width:50%; height:100%; float:left;">
+                        <div onclick="getTimeTable()" style="background-color:grey;">
+                            getTimeTable
+                        </div>
+                    </div>
+                    <div class="lazy-containers" style="width:50%; height:100%; float:left;">
+                        <div onclick="getMessMenu()" style="background-color:grey;">
+                            getMessMenu
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div id="cover" style="position:absolute; top: 0px; display:none; background: rgba(16, 17, 36, 0.8); justify-content:center; align-items:center;flex-direction:column; z-index:18; height:100vh; width:100vw;">
+                <div id="imagebox" style="width: 80vw;height: 90vh;max-height: 360px;max-width: 720px;background-size: contain;background-repeat: no-repeat;background-position: center center;"></div>
+                <div>
+                    <button class="cover-close" onclick="closecover()">
+                        Close
+                    </button>
+                </div>
+            </div>
+            <script type="text/javascript" src="js/locationloop.js"></script>
+            <script type="text/javascript" src="js/timeloop.js"></script>
+            <script type="text/javascript" src="js/otherscripts.js"></script>
+        </body>
+</html>

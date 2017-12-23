@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Demo App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="table-responsive">          
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Breakfast</td>
+                        <td><input id="breakfast0" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="breakfast1" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="breakfast2" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="breakfast3" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="breakfast4" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="breakfast5" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="breakfast6" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                    </tr>
+                    <tr>
+                        <td>Lunch</td>
+                        <td><input id="lunch0" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="lunch1" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="lunch2" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="lunch3" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="lunch4" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="lunch5" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="lunch6" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                    </tr>
+                    <tr>
+                        <td>Dinner</td>
+                        <td><input id="dinner0" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="dinner1" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="dinner2" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="dinner3" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="dinner4" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="dinner5" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                        <td><input id="dinner6" type="textbox" placeholder="Enter Menu Item" required></input></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="submit" type="button" value="Submit">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            var breakfast = ["breakfast0", "breakfast1", "breakfast2", "breakfast3", "breakfast4", "breakfast5", "breakfast6"];
+            var lunch = ["lunch0", "lunch1", "lunch2", "lunch3", "lunch4", "lunch5", "lunch6"];
+            var dinner = ["dinner0", "dinner1", "dinner2", "dinner3", "dinner4", "dinner5", "dinner6"];
+            document.getElementById('submit').addEventListener('click', function() {
+                submitMessMenu();
+            });
+            function submitMessMenu(){
+                var mymess = [];
+                for (i = 0; i < 7; i++) {
+                    mymess.push({"breakfast": document.getElementById(breakfast[i]).value,
+                                "lunch": document.getElementById(lunch[i]).value,
+                                "dinner": document.getElementById(dinner[i]).value
+                    });
+                };
+                var object = {"messmenu": mymess, "status" : "OK"};
+                console.log(object);
+            }
+        </script>
+    </body>
+</html>
